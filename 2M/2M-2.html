@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Anniversary 💖</title>
+
+  <!-- โหลดฟ้อนต์ Fredoka -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Fredoka', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      background: linear-gradient(to bottom, #ffe6f0, #ffccf9);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    h1 {
+      color: #ff66a3;
+      font-size: 2.2em;
+      margin-bottom: 0.5em;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 1.2em;
+      color: #333;
+      max-width: 450px;
+      line-height: 1.8;
+      font-weight: 400;
+      margin: 0 0 40px 0;
+    }
+
+    .gallery-container {
+      width: 90vw;
+      max-width: 1100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 500px;
+      transition: all 1s ease;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .img-wrapper {
+      height: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      transition: all 1s ease;
+      opacity: 1;
+    }
+
+    .img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+      display: block;
+    }
+
+    /* ก่อนคลิก: แสดงแค่ภาพเดียวและอยู่กึ่งกลาง */
+    .gallery-container:not(.clicked) .img1 {
+      width: 50%;
+    }
+
+    .gallery-container:not(.clicked) .img2 {
+      display: none;
+    }
+
+    /* หลังคลิก: แสดงทั้งสองภาพ */
+    .gallery-container.clicked .img1 {
+      width: 40%;
+      margin-right: 2%;
+    }
+
+    .gallery-container.clicked .img2 {
+      display: block;
+      width: 58%;
+      opacity: 1;
+    }
+
+    /* ปุ่ม */
+    .btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #ff99c8;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      font-size: 1.1em;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: 500;
+      text-decoration: none;
+      user-select: none;
+      z-index: 1000;
+    }
+
+    .btn:hover {
+      background-color: #ff5eab;
+    }
+
+    /* ปุ่มย้อนกลับซ้ายบน */
+    .btn-back {
+      left: 20px;
+      right: auto;
+    }
+
+    /* เอฟเฟกต์ fade-in */
+    .fade-in {
+      animation: fadeIn 1.5s ease;
+      animation-fill-mode: both;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="fade-in">Click on Picture loey kub</h1>
+  <p class="fade-in">1st met</p>
+
+  <div class="gallery-container fade-in" id="gallery">
+    <div class="img-wrapper img1 fade-in">
+      <img src="1stmet.jpg" alt="ภาพแรก" />
+    </div>
+    <div class="img-wrapper img2 fade-in">
+      <img src="1920TEST.jpg" alt="ภาพที่สอง (ข้อความ)" />
+    </div>
+  </div>
+
+  <!-- ปุ่มย้อนกลับ ซ้ายบน -->
+  <a class="btn btn-back fade-in" href="index.html" title="ย้อนกลับ">‹</a>
+
+  <!-- ปุ่มไปหน้าถัดไป ขวาบน -->
+  <a class="btn fade-in" href="2M-2.html" title="ไปยังหน้าถัดไป">›</a>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const gallery = document.getElementById("gallery");
+      gallery.addEventListener("click", function () {
+        this.classList.toggle("clicked");
+      });
+    });
+  </script>
+</body>
+</html>
